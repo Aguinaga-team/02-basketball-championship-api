@@ -11,8 +11,13 @@ const PORT = process.env.PORT || 4002;
 // Middlewares
 app.use(express.json());
 
-app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}`));
 
 // API Route
 app.use(cors());
 app.use('/players', routerPlayer);
+
+app.get('/', (req, res) => {
+  res.send('<h1>Hola</h1>')
+})
+
+app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}`));
