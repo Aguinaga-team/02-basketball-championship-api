@@ -22,3 +22,5 @@ app.use('/players', routerPlayer);
 // })
 
 app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}`));
+
+// ok?
