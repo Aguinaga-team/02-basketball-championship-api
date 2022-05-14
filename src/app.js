@@ -6,7 +6,8 @@ const { routerPlayer } = require('./routes/playerRoutes');
 const cors = require('cors');
 require('./config/db');
 
-const PORT = process.env.PORT || 4002;
+// const PORT = process.env.PORT || 4002;
+const PORT = 4001;
 
 // Middlewares
 app.use(express.json());
@@ -16,8 +17,8 @@ app.use(express.json());
 app.use(cors());
 app.use('/players', routerPlayer);
 
-app.get('/', (req, res) => {
-  res.send('<h1>Hola</h1>')
-})
+// app.get('/', (req, res) => {
+//   res.send('<h1>Hola</h1>')
+// })
 
 app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}`));

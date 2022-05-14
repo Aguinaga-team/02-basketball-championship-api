@@ -21,4 +21,20 @@ const crearPlayer = async (req, res) => {
   });
 };
 
-module.exports = { crearPlayer, traerPlayers };
+// Refactorizar
+const actualizarPlayer = async (req, res) => {
+  const playerId = req.params.id || null;
+  if (playerId === undefined) {
+    return res.status(404).send({ message: 'Player no válido!' });
+  }
+
+  const resultado = await Player.findByIdAndUpdate(playerId, req.body, {new: true});
+
+  try {
+    res.status(201).send({resultado});
+  } catch (error) {
+    res.status(400).send({message: error});
+  }
+};
+
+module.exports = { crearPlayer, traerPlayers, actualizarPlayer };
