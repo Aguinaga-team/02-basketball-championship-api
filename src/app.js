@@ -15,6 +15,10 @@ app.use(express.json());
 
 // API Route
 app.use(cors());
+app.get('/', (req, res) => {
+    res.json({msg: "basketball-championship-api" });
+});
+
 app.use('/players', routerPlayer);
 
 // app.get('/', (req, res) => {
