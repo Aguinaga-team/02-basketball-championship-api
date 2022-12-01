@@ -9,7 +9,7 @@ require('./config/db');
 // const PORT = process.env.PORT || 4002;
 const PORT = 4001;
 
-// Middlewares
+// Middlewares updated
 app.use(express.json());
 
 
